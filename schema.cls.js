@@ -1,3 +1,8 @@
+/*
+    version: 1.0
+    author: Fosztó Zsolt
+*/
+
 class Schema {
 
     #types = {
@@ -69,7 +74,14 @@ class Schema {
 
         return false;
     }
-
+/**
+*    Visszaadja a egy változó típusát, bármilyen is legyen az. csupa kisbetűvel.
+*    A javascript önmagában, ha mondjuk egy promitív típust objectként hozok létre, akkkor azt
+*    object típusként adja vissza.
+*    pl:
+*    let s = new String()
+*    ennek a tipusa "object" lesz a "typeof" szerint. Míg a Schema szerint ez is "string"
+*/
     typeOf(variable){
         if (this.#primitives.includes(typeof variable))
             return typeof variable;
